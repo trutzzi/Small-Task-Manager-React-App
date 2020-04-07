@@ -1,0 +1,288 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Tomorrow', sans-serif;
+  background: #FCF6B9;
+  color: #362B2B;
+}
+
+.title {
+  margin-bottom: 15px;
+  display: inline-block;
+  font-size: 24px;
+  line-height: 28px;
+  position: relative;
+}
+
+.btn-del, .btn-toggle, .btn-toggle-filter {
+  padding: 5px;
+  margin-left: 10px;
+  background: #995333;
+  border: 1px solid black;
+  color: #F9CE78;
+  font-size: 10px;
+  vertical-align: middle;
+  width: auto;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.btn-toggle {
+  margin-right: 0;
+  min-width: 135px;
+  border-radius: 5px 0 0 5px;
+}
+
+.btn-del {
+  background: #F9CE78;
+  margin-left: 0;
+  color: #000;
+  border-left: 0px solid black;
+  border-radius: 0 5px 5px 0;
+}
+
+.btn-toggle-filter {
+  display: block;
+  margin: 10px 0 25px 0;
+  border-left: 0px solid black;
+}
+
+.btn-del:first-child, .btn-toggle:first-child {
+  margin-left: 0;
+}
+
+.btn-del:hover, .btn-toggle:hover, .btn-toggle-filter:hover {
+  color: #fff;
+}
+
+.btn-toggle.complete:before {
+  font-family: 'Font Awesome 5 Free';
+  content: '\f00c';
+  font-weight: 900;
+  vertical-align: middle;
+  margin-right: 5px;
+  padding: 5px 0;
+}
+
+.btn-toggle.uncomplete:before {
+  font-family: 'Font Awesome 5 Free';
+  content: '\f00d';
+  font-weight: 900;
+  vertical-align: middle;
+  margin-right: 5px;
+  padding: 5px 0;
+}
+
+.btn-toggle-filter:before {
+  font-family: 'Font Awesome 5 Free';
+  content: '\f0b0';
+  font-weight: 900;
+  vertical-align: middle;
+  margin-right: 5px;
+  padding: 5px 0;
+}
+
+.btn-del:before {
+  font-family: 'Font Awesome 5 Free';
+  content: '\f1f8';
+  font-weight: 900;
+  vertical-align: middle;
+  margin-right: 5px;
+  padding: 5px 0;
+}
+
+.title:before {
+  content: '';
+  transition: background 1s;
+  padding: 5px;
+  margin-right: 10px;
+  display: inline-block;
+  margin-left: 10px;
+  vertical-align: middle;
+  border: 1px solid #995333;
+  border-radius: 70%;
+}
+
+.title:after {
+  position: absolute;
+  width: 0;
+  height: 2px;
+  background: black;
+  top: 50%;
+  left: 30px;
+  transform: translateY(-50%);
+  transition: width .3s;
+  content: ""
+}
+
+.done .title:after {
+  width: calc(100% - 25px);
+}
+
+.done .title:before {
+  background: #995333;
+  border: 1px solid #995333;
+}
+
+.body {
+  font-size: 14px;
+  padding-left: 20px;
+}
+
+.item {
+  padding: 15px 0;
+  border-radius: 5px;
+  margin-bottom: 15px;
+  transition: background .5s;
+  font-size: 16px;
+}
+
+.done {
+  background: #F9CE78;
+}
+
+.done>.title {
+  text-decoration: line-through;
+}
+
+button, input, textarea {
+  background: transparent;
+  border: 3px solid #995333;
+  color: #362B2B;
+  display: block;
+  width: 100%;
+  font-family: 'Tomorrow', sans-serif;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+button {
+  background: #F9CE78;
+}
+
+.App {
+  max-width: 1000px;
+  margin: 0 auto;
+  margin-top: 25px;
+}
+.header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+form input {
+  display: block;
+  margin-bottom: 15px;
+}
+
+form textarea {
+  max-height: 400px;
+  max-width: 100%;
+  min-height: 140px;
+}
+
+form button {
+  margin: 10px 0;
+  font-weight: 600;
+}
+
+@keyframes Fade {
+  from {
+    opacity: .3;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+.msg {
+  padding: 15px 0;
+}
+
+.msg.visible {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: black;
+  left: 0;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  opacity: 0.3;
+  color: white;
+  z-index: 0;
+  animation-name: Fade;
+  animation-duration: 1s;
+  animation-delay: 2s;
+  animation-fill-mode: forwards;
+}
+
+.App .form {
+  margin-left: -3.5px;
+  vertical-align: top;
+}
+
+.App .form h2 {
+  padding-bottom: 10px;
+}
+
+.App .Items h2 {
+  margin-bottom: 10px;
+}
+
+.App .Items {
+  margin-left: -3.5px;
+  padding-right: 20px;
+  vertical-align: top;
+}
+
+.App .control {
+  margin-top: 5px;
+  display: block;
+}
+
+.App h1 {
+  text-transform: uppercase;
+  padding: 0;
+  margin: 0;
+}
+
+.App h1+small {
+  font-size: 12px;
+  display: block;
+  margin-bottom: 25px;
+}
+
+.Info span {
+  display: inline-block;
+  font-size: 12px;
+  margin-right: 10px;
+  color: #995333;
+}
+
+.Info span:before {
+  content: "\f0a4";
+  font-weight: 900;
+  font-family: 'Font Awesome 5 Free';
+  margin-right: 5px;
+}
+
+.Info span.complete:before {
+  content: '\f00c';
+}
+
+.Info span.uncomplete:before {
+  content: '\f00d';
+}
+
+.Info span.total:before {
+  content: '\f02b';
+}
+.wrapper {
+  padding: 0 20px;
+}
